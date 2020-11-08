@@ -7,21 +7,19 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.google.com/specimen/Nunito+Sans">
 </head>
-<body>
+<body id="body">
    <header>
         <h2>Where in the world?</h2>
         <div class="dark-mode-container">
-            <div class="dark-mode-icon">
-                <img src="" alt="">
-            </div>
-            <a href="#">
+            <button type="button" class="dark-mode-btn" onclick="darkModeToggle()">
+                <img src="img/moon.svg" alt="dark mode" class="dark-mode-icon">
                 <div class="dark-mode-title">
                     Dark Mode
                 </div>
-            </a>
+            </button>
         </div>
    </header>
-   <main>
+   <main id="main">
        <div class="top-controls">
             <input type="text" name="search-bar" placeholder="Search for a country..." required="" onkeyup="searchFunction()">
 
