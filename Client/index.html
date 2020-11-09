@@ -21,8 +21,10 @@
    </header>
    <main id="main">
        <div class="top-controls">
-            <input type="text" name="search-bar" placeholder="Search for a country..." required="" onkeyup="searchFunction()">
+            <input type="text" name="search-bar" id="search-bar" placeholder="Search for a country..." required="" onkeyup="searchFunction()">
 
+
+            <button type="submit" id="render" onclick="render">Render</button>
             <!-- Filter by Region -->
 
             <div class="dropdown">
@@ -34,6 +36,20 @@
                     <div class="dropdown-content-item" id="oceania">Oceania</div>
                 </div>
             </div>
+       </div>
+
+       <!-- Cards body -->
+
+       <div class="cards-body">
+           <div class="card-image">
+               <img src="" alt="">
+           </div>
+           <div class="card-title">
+               %Country name%
+           </div>
+           <div class="cards-text">
+               Lorem ipsum
+           </div>
        </div>
    </main>
     

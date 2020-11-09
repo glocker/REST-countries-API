@@ -88,7 +88,7 @@ input[name="search-bar"] {
     background-repeat: no-repeat;
     background-position: 8% 50%;
     outline: none; 
-    width: 40%; 
+    width: 30%; 
     padding: 8px 60px; 
     box-sizing: border-box;
     border: 1px solid #DDD; 
@@ -150,5 +150,22 @@ input[name="search-bar"]:focus {
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {
     display:block;
+}
+
+                        /* Cards body */
+
+.cards-body {
+    width: 15vw;
+    height: 33vh;
+    background-color: purple;
+}
+
+.cards-body img {
+    height: 30%;
+    width: 100%;
+}
+
+.cards-image {
+
 }
 
