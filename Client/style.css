@@ -154,18 +154,34 @@ input[name="search-bar"]:focus {
 
                         /* Cards body */
 
-.cards-body {
+.card-body {
     width: 15vw;
-    height: 33vh;
-    background-color: purple;
+    height: 40vh;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 5px;
 }
 
-.cards-body img {
-    height: 30%;
+.card-body img {
+    height: 20%;
     width: 100%;
+    
+    
 }
 
-.cards-image {
+.card-image {
+    
+}
 
+.card-info {
+    padding: 2vh;
+}
+
+.card-title {
+    font-weight: 600;
+}
+
+.card-text {
+    /*padding: 2vh 0;*/
 }
 
