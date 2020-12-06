@@ -1,66 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset='utf-8'>
-	<meta name='viewport' content='width=device-width,initial-scale=1'>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
 
-	<title>########</title>
-
-	<link rel='icon' type='image/png' href='favicon.png'>
-	<link rel="stylesheet" href="build/style.css">
-	<link rel='stylesheet' href='global.css'>
-	<link rel='stylesheet' href='build/bundle.css'>
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
     <link href="https://fonts.google.com/specimen/Nunito+Sans">
+    <title>React App</title>
+  </head>
+  <body id="body">
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root">
 
-	<script defer src='/build/bundle.js'></script>
-</head>
+    <header>
+      <h2>Where in the world?</h2>
+      <div class="dark-mode-container">
+          <button type="button" class="dark-mode-btn" onclick="darkModeToggle()">
+              <img src="img/moon.svg" alt="dark mode" class="dark-mode-icon">
+              <div class="dark-mode-title">
+                  Dark Mode
+              </div>
+          </button>
+      </div>
+ </header>
+ <main id="main">
+     <div class="top-controls">
+          <input type="text" name="search-bar" id="search-bar" placeholder="Search for a country..." required="" onkeyup="">
 
-<body id="body">
-	<header>
-		 <h2>Where in the world?</h2>
-		 <div class="dark-mode-container">
-			 <button type="button" class="dark-mode-btn" onclick="darkModeToggle()">
-				 <img src="img/moon.svg" alt="dark mode" class="dark-mode-icon">
-				 <div class="dark-mode-title">
-					 Dark Mode
-				 </div>
-			 </button>
-		 </div>
-	</header>
-	<main id="main">
-		<div class="top-controls">
-			 <input type="text" name="search-bar" id="search-bar" placeholder="Search for a country..." required="" onkeyup="">
- 
- 
-	  
-			 <!-- Filter by Region -->
- 
-			 <div class="dropdown">
-				 <button onClick="dropDownToggle()" class="dropdown-btn">Filter by Region</button>
-				 <div class="dropdown-content" id="dropdown-content">
-					 <div class="dropdown-content-item" id="africa">Africa</div>
-					 <div class="dropdown-content-item" id="america">America</div>
-					 <div class="dropdown-content-item" id="europe">Europe</div>
-					 <div class="dropdown-content-item" id="oceania">Oceania</div>
-				 </div>
-			 </div>
-		</div>
- 
-		<!-- Cards body -->
- 
-		<div class="card-body" style="display: none;">
-			<div class="card-image">
-				<img src="" alt="" id="card-image">
-			</div>
-			<div class="card-info">
-				 <div class="card-title" id="card-title">
-					 
-				 </div>
-				 <div class="card-text" id="card-text">
-					 
-				 </div>
-			</div>
-		</div>
-	</main>
- </body>
+
+   
+          <!-- Filter by Region -->
+
+          <div class="dropdown">
+              <button onClick="dropDownToggle()" class="dropdown-btn">Filter by Region</button>
+              <div class="dropdown-content" id="dropdown-content">
+                  <div class="dropdown-content-item" id="africa">Africa</div>
+                  <div class="dropdown-content-item" id="america">America</div>
+                  <div class="dropdown-content-item" id="europe">Europe</div>
+                  <div class="dropdown-content-item" id="oceania">Oceania</div>
+              </div>
+          </div>
+     </div>
+
+     <!-- Cards body -->
+     <div id="cards-wrapper"></div>
+
+     <div class="card-body" style="display: none;">
+         <div class="card-image">
+             <img src="" alt="" id="card-image">
+         </div>
+         <div class="card-info">
+              <div class="card-title" id="card-title">
+                  
+              </div>
+              <div class="card-text" id="card-text">
+                  
+              </div>
+         </div>
+     </div>
+ </main>
+</div>
+  </body>
 </html>
