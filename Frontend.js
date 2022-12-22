@@ -22,8 +22,8 @@ function dropDownToggle() {
 // Dark mode
 
 function darkModeToggle() {
-    let body = document.getElementById('body');
-    let main = document.getElementById('main');
+    const body = document.getElementById('body');
+    const main = document.getElementById('main');
 
     if (body.classList.contains('dark') && main.classList.contains('dark')) {
        body.classList.remove('dark');
@@ -43,8 +43,35 @@ const cardTitle = document.getElementById('card-title');
 const cardImage = document.getElementById('card-image');
 const cardText = document.getElementById('card-text');
 
-const requestURL = 'https://restcountries.eu/rest/v2/all';
+const requestURL = 'https://restcountries.com/v3.1/all';
 var enter = document.getElementById('search-bar');
+
+fetch(requestURL, {method: 'GET'})
+    .then(response => response.json()
+        .then(data => {
+            renderCard(data);
+        })
+)
+
+function renderCard (data) {
+    data.forEach((country) => {
+
+        const countryTitle = country.name.common;
+        const countryFlag = country.flags.svg;
+
+
+        cardBody.style.display = 'none'
+            ? cardBody.style.display = 'block'
+            : cardBody.style.display = 'none'
+
+        cardTitle.innerHTML = countryTitle;
+        cardImage.src = countryFlag;
+
+        cardText.innerHTML = "<p>Population: " + country.population + "</p>" + "<p>Region: " + country.region + "</p>" + "<p>Capital: " + country.capital + "</p>"
+
+    })
+}
+
 
 function sendRequest(method, url) {
     return new Promise( (resolve, reject) => {
@@ -97,9 +124,43 @@ function sendRequest(method, url) {
     })
 }
 
-sendRequest('GET', requestURL)
-            .then(data => console.log(data))
-            .catch(err => console.log(err))
+// sendRequest('GET', requestURL)
+//     .then(data => console.log(data))
+//     .catch(err => console.log(err))
+
+const input = document.getElementById('search-bar')
+
+input.onkeyup = returnResult;
+
+function returnResult (e) {
+    return sendRequest('GET', requestURL)
+    .then(data => console.log(data))
+    .catch(err => console.log(err))
+}
+
+// Filter by Regions
+
+const regionName = document.getElementById('dropdown-content-item')
+//regionName.addEventListener('click', event => sortingByRegion())
+
+const region = {name: 'France'}
+
+
+function sortingByRegion(region) {
+    return fetch(requestURL)
+        .then(response => response.json())
+        .then(json => console.log(json.filter(item => item.region == region)))
+        .catch(error => console.log(error))
+}
+
+sortingByRegion('Asia')
+
+
+
+
+
+
+
 
 
 
