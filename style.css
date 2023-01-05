@@ -155,6 +155,10 @@ input[name="search-bar"]:focus {
 
                         /* Cards body */
 
+#cards-list {
+    display: block;
+}
+
 .card-body {
     width: 15vw;
     height: 40vh;

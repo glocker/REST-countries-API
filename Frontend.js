@@ -7,17 +7,13 @@ const detectDeviceType = () =>
     ? "Mobile"
     : "Desktop";
 
-detectDeviceType(); 
-
-
-
+detectDeviceType();
 
 // Dropdown menu
 
 function dropDownToggle() {
     document.getElementById("dropdown-content").classList.toggle("show");
 }
-
 
 // Dark mode
 
@@ -43,6 +39,10 @@ const cardTitle = document.getElementById('card-title');
 const cardImage = document.getElementById('card-image');
 const cardText = document.getElementById('card-text');
 
+
+const cardsList = document.getElementById('cards-list');
+const cardTemplate = document.getElementById('card-template');
+
 const requestURL = 'https://restcountries.com/v3.1/all';
 var enter = document.getElementById('search-bar');
 
@@ -56,19 +56,22 @@ fetch(requestURL, {method: 'GET'})
 function renderCard (data) {
     data.forEach((country) => {
 
+        // Get data from API
         const countryTitle = country.name.common;
         const countryFlag = country.flags.svg;
 
+        const clone = cardTemplate.content.cloneNode(true);
+        const cardTitle = clone.getElementById('card-title');
+        cardTitle.textContent = countryTitle;
 
-        cardBody.style.display = 'none'
-            ? cardBody.style.display = 'block'
-            : cardBody.style.display = 'none'
-
-        cardTitle.innerHTML = countryTitle;
+        const cardImage = clone.getElementById('card-image');
         cardImage.src = countryFlag;
 
-        cardText.innerHTML = "<p>Population: " + country.population + "</p>" + "<p>Region: " + country.region + "</p>" + "<p>Capital: " + country.capital + "</p>"
+        const cardText = clone.getElementById('card-text');
+        cardText.innerHTML = "<p>Population: " + country.population + "</p>" + "<p>Region: " + country.region + "</p>" + "<p>Capital: " + country.capital || country.capital[0] + "</p>"
 
+        // Insert card with data in DOM
+        cardsList.appendChild(clone);
     })
 }
 
