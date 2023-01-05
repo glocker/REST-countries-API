@@ -18,7 +18,7 @@ You can use any JavaScript framework/library on the front-end such as [React](ht
 
 Your users should be able to:
 
-- See all countries from the API on the homepage
+:white_check_mark: See all countries from the API on the homepage
 - Search for a country using an `input` field
 - Filter countries by region
 - Click on a country to see more detailed information on a separate page
