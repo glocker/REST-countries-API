@@ -156,7 +156,8 @@ input[name="search-bar"]:focus {
                         /* Cards body */
 
 #cards-list {
-    display: block;
+    display: inline-flex;
+    flex-wrap: wrap;
 }
 
 .card-body {
@@ -165,6 +166,7 @@ input[name="search-bar"]:focus {
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     border-radius: 5px;
+    margin: 10px;
 }
 
 .card-body img {
