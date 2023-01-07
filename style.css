@@ -71,7 +71,6 @@ header {
                         /* Main */
 main {
     padding: 3vh 3vw 3vh 3vw;
-    height: 90vh;
     background-color: hsl(0, 0%, 98%);
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
