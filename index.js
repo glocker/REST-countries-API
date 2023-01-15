@@ -37,7 +37,7 @@ function renderCard (data) {
         cardImage.src = countryFlag;
 
         const cardText = clone.getElementById('card-text');
-        cardText.innerHTML = "<p>Population: " + country.population + "</p>" + "<p>Region: " + country.region + "</p>" + "<p>Capital: " + country.capital || country.capital[0] + "</p>"
+        cardText.innerHTML = "<p>Population: " + country.population.toLocaleString('en') + "</p>" + "<p>Region: " + country.region + "</p>" + "<p>Capital: " + country.capital || country.capital[0] + "</p>"
 
         // Insert card with data in DOM
         cardsList.appendChild(clone);
