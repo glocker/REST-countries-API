@@ -1,27 +1,10 @@
-import {detectDeviceType, emptyCardsList} from './utils.js';
+import {detectDeviceType, emptyCardsList, dropDownToggle, darkModeToggle} from './utils.js';
+
+// Do it because I use es6 modules
+window.dropDownToggle = dropDownToggle;
+window.darkModeToggle = darkModeToggle;
 
 detectDeviceType();
-
-// Dropdown menu
-
-function dropDownToggle() {
-    document.getElementById("dropdown-content").classList.toggle("show");
-}
-
-// Dark mode
-
-function darkModeToggle() {
-    const body = document.getElementById('body');
-    const main = document.getElementById('main');
-
-    if (body.classList.contains('dark') && main.classList.contains('dark')) {
-       body.classList.remove('dark');
-       main.classList.remove('dark'); 
-    } else {
-        body.classList.add('dark');
-        main.classList.add('dark');
-    }
-}
 
 const cardsList = document.getElementById('cards-list');
 const cardTemplate = document.getElementById('card-template');

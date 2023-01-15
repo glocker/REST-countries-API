@@ -13,4 +13,26 @@ function emptyCardsList(element) {
     }
 }
 
-export { detectDeviceType, emptyCardsList };
+// Dropdown menu
+const filter = document.getElementById("dropdown-content");
+filter.addEventListener('click', dropDownToggle, false);
+
+function dropDownToggle() {
+    filter.classList.toggle("show");
+}
+
+// Dark mode
+function darkModeToggle() {
+    const body = document.getElementById('body');
+    const main = document.getElementById('main');
+
+    if (body.classList.contains('dark') && main.classList.contains('dark')) {
+        body.classList.remove('dark');
+        main.classList.remove('dark');
+    } else {
+        body.classList.add('dark');
+        main.classList.add('dark');
+    }
+}
+
+export { detectDeviceType, emptyCardsList, dropDownToggle, darkModeToggle };

@@ -105,7 +105,7 @@ input[name="search-bar"]:focus {
     background-color: #ffffff;
     color: black;
     padding: 16px;
-    font-size: 16px;
+    font-size: 14px;
     border-radius: 5%;
     border: none;
     cursor: pointer;
