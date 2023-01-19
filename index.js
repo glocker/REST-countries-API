@@ -30,6 +30,11 @@ function renderCard (data) {
         const countryFlag = country.flags.svg;
 
         const clone = cardTemplate.content.cloneNode(true);
+
+        // Rewrite card id from card-body to unique country name
+        const cardBody = clone.getElementById('card-body');
+        cardBody.id = countryTitle;
+
         const cardTitle = clone.getElementById('card-title');
         cardTitle.textContent = countryTitle;
 
@@ -89,6 +94,12 @@ function sortingByRegion(region) {
 }
 
 //sortingByRegion('Asia')
+
+window.cardOpener = cardOpener;
+function cardOpener(id) {
+    console.log(id)
+}
+
 
 
 
