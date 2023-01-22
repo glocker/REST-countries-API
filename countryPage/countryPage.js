@@ -3,6 +3,8 @@ const url = document.location.href;
 const params = (new URL(url)).searchParams;
 const countryName = params.get("name");
 
-document.createElement(<div>${countryName}</div>);
+const country = document.getElementById('name');
+country.textContent = countryName;
 
-console.log(countryName)
+
+console.log(country)
