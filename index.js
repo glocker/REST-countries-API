@@ -96,8 +96,11 @@ function sortingByRegion(region) {
 //sortingByRegion('Asia')
 
 window.cardOpener = cardOpener;
-function cardOpener(id) {
-    console.log(id)
+function cardOpener(countryName) {
+    console.log(countryName);
+
+    //window.location.href = './countryPage/countryPage.html'
+    window.open(`./countryPage/countryPage.html?name=${countryName}`, "_blank");
 }
 
 
