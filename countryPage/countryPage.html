@@ -4,11 +4,61 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../commonStyles.css">
+    <link rel="stylesheet" href="countryPage.css">
     <title>Document</title>
 </head>
 <body>
-    123
-    <div id="name"></div>
+
+    <header>
+        <h2>Where in the world?</h2>
+        <div class="dark-mode-container">
+            <button type="button" class="dark-mode-btn" onclick="darkModeToggle()">
+                <img src="../img/moon.svg" alt="dark mode" class="dark-mode-icon">
+                <div class="dark-mode-title">
+                    Dark Mode
+                </div>
+            </button>
+        </div>
+   </header>
+
+   <main>
+    
+        <button type="button" class="backButton">&#8592;Back</button>
+
+        <div class="countryContainer">
+
+            <img src="" alt="" id="card-image">
+
+            <div class="countryInfo">
+                <h2 id="name"></h2>
+                
+                <div class="countryDetails">
+                    <div class="countryDetails-column1">
+                        <div class="nativeName">Native name: Belgie</div>
+                        <div class="population">Population: 11,319,511</div>
+                        <div class="region">Region: Europe</div>
+                        <div class="subRegion">Sub Region: Western Europe</div>
+                        <div class="capital">Capital: Brussels</div>
+                    </div>
+                    <div class="countryDetails-column2">
+                        <div class="topLevelDomain">Top Level Domain: .be</div>
+                        <div class="currencies">Currencies: Euro</div>
+                        <div class="languages">Languages: Dutch, French, German</div>
+                    </div>
+                </div>
+
+                <div class="countryBorders">
+                    Border Countries:
+                    <button>France</button>
+                    <button>Germany</button>
+                    <button>Netherlands</button>
+                </div>
+            </div>
+
+        </div>
+
+   </main>
     <script src="./countryPage.js"></script>
 </body>
 </html>
