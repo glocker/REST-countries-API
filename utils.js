@@ -15,7 +15,7 @@ function emptyCardsList(element) {
 
 // Dropdown menu
 const filter = document.getElementById("dropdown-content");
-filter.addEventListener('click', dropDownToggle, false);
+filter ? filter.addEventListener('click', dropDownToggle, false) : null;
 
 function dropDownToggle() {
     filter.classList.toggle("show");
