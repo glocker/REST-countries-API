@@ -1,0 +1,37 @@
+header {
+    margin: 3vh 3vw 3vh 3vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+.dark-mode-container {
+    display: flex;
+}
+
+.dark-mode-btn {
+    text-decoration: none;
+    background-color: white;
+    border: none;
+}
+
+.dark-mode-btn:hover {
+    cursor: pointer;
+}
+
+.dark-mode-icon {
+    width: 20px;
+    height: 20px;
+    display: inline;
+    vertical-align: middle;
+}
+
+.dark-mode-title {
+    font-weight: 300;
+    color: black;
+    display: inline;
+}
+
+.dark { /* Class for dark mode */
+    background-color: hsl(207, 26%, 17%);
+    color: #e6e6e6;
+}
