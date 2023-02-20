@@ -1,11 +1,12 @@
 import React, {useEffect, useState} from 'react';
 import './CountriesList.css';
+import CountryCard from '../CountryCard/CountryCard'
 
 const requestURL = 'https://restcountries.com/v3.1/';
 
-function CountriesList() {
+function CountriesList(): any {
 
-    const [countries, setCountries] = useState([]);
+    const [countries, setCountries]: any = useState([]);
 
     useEffect(() => {
 
@@ -14,7 +15,6 @@ function CountriesList() {
 
             const dataToJSON = await data.json();
 
-            console.log(dataToJSON)
             setCountries(dataToJSON);
         }
 
@@ -26,13 +26,7 @@ function CountriesList() {
     return(
         <div className="countries-list">
             Countries list:
-            {
-                countries.map((countriesData: any) => {
-                    return(
-                        <div key={countriesData.name.official}>{countriesData.name.official}</div>
-                    )
-                })
-            }
+            <CountryCard data={countries} />
         </div>
     )
 }
