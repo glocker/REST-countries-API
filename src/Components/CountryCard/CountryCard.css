@@ -3,7 +3,7 @@
     flex-wrap: wrap;
 }
 
-.card-body {
+.cards-list {
     width: 15vw;
     height: 40vh;
     background-color: white;
@@ -13,7 +13,6 @@
 }
 
 .image {
-    height: 20%;
     width: 100%;
 }
 

@@ -25,7 +25,6 @@ function CountriesList(): any {
 
     return(
         <div className="countries-list">
-            Countries list:
             <CountryCard data={countries} />
         </div>
     )

@@ -6,7 +6,10 @@ interface ICountry {
     },
     flags: {
         svg: string
-    }
+    },
+    population: string,
+    region: string,
+    capital: string
 }
 
 function CountryCard(props: any) {
@@ -22,7 +25,11 @@ function CountryCard(props: any) {
                     </div>
                     <div className="card-info">
                         <div className="card-title">{country.name.official}</div>
-                        <div className="card-text"></div>
+                        <div className="card-text">
+                            <div className="card-population">Population: {country.population.toLocaleString()}</div>
+                            <div className="card-region">Region: {country.region}</div>
+                            <div className="card-capital">Capital: {country.capital}</div>
+                        </div>
                     </div>
                 </div>
             )
