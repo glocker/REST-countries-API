@@ -1,22 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import './CountriesList.css';
-import CountryCard from '../CountryCard/CountryCard';
 
 const requestURL = 'https://restcountries.com/v3.1/';
 
 function CountriesList(): any {
-
-    function search(items: any) {
-        return items.filter((item: any) => {
-            return searchParam.some((searchValue: any) => {
-                return (
-                    item[searchValue] 
-                    ? item[searchValue].toString().toLowerCase().indexOf(query.toLowerCase()) > -1
-                    : null
-                )
-            })
-        })
-    }
 
     const [countries, setCountries]: any = useState([]);
 
@@ -38,6 +25,22 @@ function CountriesList(): any {
 
     }, [])
 
+    function search(items: any) {
+
+        const foundItems: object[] = [];
+
+        return items.filter((item: any) => {
+            return searchParam.some((searchValue: any) => {
+
+                if (query && item[searchValue] && item[searchValue].toString().toLowerCase().indexOf(query.toLowerCase()) !== -1) {
+                    foundItems.push(item)
+                }
+
+                return foundItems.length ? foundItems : null;
+            })
+        })
+    }
+
 
     return(
         <main>
@@ -55,7 +58,27 @@ function CountriesList(): any {
                 </label>
             </div>
             <div className="countries-list">
-                <CountryCard data={countries} />
+                {countries.map((country: any) => {
+
+                    return(
+                        <div className="cards-list"
+                             key={country.name.official}>
+                            <div className="card-image">
+                                <img className="image" src={country.flags.svg} alt=""/>
+                            </div>
+                            <div className="card-info">
+                                <div className="card-title">{country.name.official}</div>
+                                <div className="card-text">
+                                    <div className="card-population">Population: {country.population.toLocaleString()}</div>
+                                    <div className="card-region">Region: {country.region}</div>
+                                    <div className="card-capital">Capital: {country.capital}</div>
+                                </div>
+                            </div>
+                        </div>
+                    )
+
+
+                })}
             </div>
         </main>
     )
