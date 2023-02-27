@@ -27,16 +27,17 @@ function CountriesList(): any {
 
     function search(items: any) {
 
-        const foundItems: object[] = [];
-
         return items.filter((item: any) => {
             return searchParam.some((searchValue: any) => {
 
-                if (query && item[searchValue] && item[searchValue].toString().toLowerCase().indexOf(query.toLowerCase()) !== -1) {
-                    foundItems.push(item)
+                if (query && item[searchValue]) {
+                    if (item[searchValue].toString().toLowerCase().indexOf(query.toLowerCase()) > -1) {
+                        return item[searchValue].toString().toLowerCase().indexOf(query.toLowerCase()) > -1;
+                    }
                 }
-
-                return foundItems.length ? foundItems : null;
+                else {
+                    return countries;
+                }
             })
         })
     }
@@ -58,7 +59,7 @@ function CountriesList(): any {
                 </label>
             </div>
             <div className="countries-list">
-                {countries.map((country: any) => {
+                {search(countries).map((country: any) => {
 
                     return(
                         <div className="cards-list"
