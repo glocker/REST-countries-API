@@ -1,15 +1,17 @@
 import React, {useEffect, useState} from 'react';
 import './CountriesList.css';
+import CountryCard from '../CountryCard/CountryCard';
+import {ICountry} from '../../Interfaces/Interfaces';
 
 const requestURL = 'https://restcountries.com/v3.1/';
 
 function CountriesList(): any {
 
-    const [countries, setCountries]: any = useState([]);
+    const [countries, setCountries]: any = useState<object[]>([]);
 
-    const [query, setQuery]: any = useState("");
+    const [query, setQuery]: any = useState<string>("");
 
-    const [searchParam]: any = useState(['capital', 'name']);
+    const [searchParam]: any = useState<string|string[]>(['capital', 'name']);
 
     useEffect(() => {
 
@@ -25,10 +27,10 @@ function CountriesList(): any {
 
     }, [])
 
-    function search(items: any) {
+    function search(items: object[]): any {
 
         return items.filter((item: any) => {
-            return searchParam.some((searchValue: any) => {
+            return searchParam.some((searchValue: string) => {
 
                 if (query && item[searchValue]) {
                     if (item[searchValue].toString().toLowerCase().indexOf(query.toLowerCase()) > -1) {
@@ -59,26 +61,12 @@ function CountriesList(): any {
                 </label>
             </div>
             <div className="countries-list">
-                {search(countries).map((country: any) => {
+                { search(countries).map((country: ICountry) => {
 
-                    return(
-                        <div className="cards-list"
-                             key={country.name.official}>
-                            <div className="card-image">
-                                <img className="image" src={country.flags.svg} alt=""/>
-                            </div>
-                            <div className="card-info">
-                                <div className="card-title">{country.name.official}</div>
-                                <div className="card-text">
-                                    <div className="card-population">Population: {country.population.toLocaleString()}</div>
-                                    <div className="card-region">Region: {country.region}</div>
-                                    <div className="card-capital">Capital: {country.capital}</div>
-                                </div>
-                            </div>
-                        </div>
-                    )
-
-
+                    // For each country (searched or from full list) render country card
+                    return <CountryCard
+                                data={country}
+                                key={country.name.official} />
                 })}
             </div>
         </main>
