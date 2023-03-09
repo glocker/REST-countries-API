@@ -23,3 +23,8 @@
 .card-title {
     font-weight: 600;
 }
+
+.controlsWrapper {
+    display: flex;
+    justify-content: space-between;
+}
