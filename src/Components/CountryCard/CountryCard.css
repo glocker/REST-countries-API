@@ -1,9 +1,9 @@
-.cards-list {
+.card-wrapper {
     display: inline-flex;
     flex-wrap: wrap;
 }
 
-.cards-list {
+.card-wrapper {
     width: 15vw;
     height: 40vh;
     background-color: white;

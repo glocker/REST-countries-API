@@ -5,7 +5,7 @@ import {ICard} from '../../Interfaces/Interfaces';
 function CountryCard(props: ICard) {
 
     return(
-        <div className="cards-list"
+        <div className="card-wrapper"
              key={props.data.name.official}>
             <div className="card-image">
                 <img className="image" src={props.data.flags.svg} alt=""/>
