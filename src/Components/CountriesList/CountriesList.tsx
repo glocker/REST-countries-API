@@ -2,6 +2,8 @@ import React, {ChangeEvent, useEffect, useState} from 'react';
 import './CountriesList.css';
 import CountryCard from '../CountryCard/CountryCard';
 import {ICountry} from '../../Interfaces/Interfaces';
+import Header from '../Header/Header';
+import {Link} from 'react-router-dom';
 
 const requestURL = 'https://restcountries.com/v3.1/';
 
@@ -62,43 +64,44 @@ function CountriesList(): any {
 
 
     return(
-        <main>
-            <div className="controlsWrapper">
-                <div className="searchBar">
-                    <label htmlFor="search-form">
-                        <input
-                            type="search"
-                            name="search-form"
-                            id="search-form"
-                            className="search-input"
-                            placeholder="Search for a country..."
-                            value={query}
-                            onChange={(e) => setQuery(e.target.value)}
-                        />
-                    </label>
+        <div>
+            <Header />
+            <main>
+                <div className="controlsWrapper">
+                    <div className="searchBar">
+                        <label htmlFor="search-form">
+                            <input
+                                type="search"
+                                name="search-form"
+                                id="search-form"
+                                className="search-input"
+                                placeholder="Search for a country..."
+                                value={query}
+                                onChange={(e) => setQuery(e.target.value)}
+                            />
+                        </label>
+                    </div>
+                    <div className="div">
+                        <select onChange={(e: ChangeEvent<HTMLSelectElement>) => setRegion(e.target.value)}
+                                aria-label="Filter countries by region">
+                            <option value="All">Filter By Region</option>
+                            <option value="Africa">Africa</option>
+                            <option value="America">America</option>
+                            <option value="Asia">Asia</option>
+                            <option value="Europe">Europe</option>
+                            <option value="Oceania">Oceania</option>
+                        </select>
+                    </div>
                 </div>
-                <div className="div">
-                    <select onChange={(e: ChangeEvent<HTMLSelectElement>) => setRegion(e.target.value)}
-                            aria-label="Filter countries by region">
-                        <option value="All">Filter By Region</option>
-                        <option value="Africa">Africa</option>
-                        <option value="America">America</option>
-                        <option value="Asia">Asia</option>
-                        <option value="Europe">Europe</option>
-                        <option value="Oceania">Oceania</option>
-                    </select>
-                </div>
-            </div>
-            <div className="countries-list">
-                { search(countries).map((country: ICountry) => {
+                <div className="countries-list">
+                    { search(countries).map((country: ICountry) => {
 
-                    // For each country (searched or from full list) render country card
-                    return <CountryCard
-                                data={country}
-                                key={country.name.official} />
-                })}
-            </div>
-        </main>
+                        // For each country (searched or from full list) render country card
+                        return <CountryCard data={country} key={country.name.official} />
+                    })}
+                </div>
+            </main>
+        </div>
     )
 }
 

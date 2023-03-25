@@ -1,14 +1,20 @@
 import React from 'react';
 import './MainPage.css';
-import Header from "./Components/Header/Header";
-import CountriesList from "./Components/CountriesList/CountriesList";
+import CountriesList from './Components/CountriesList/CountriesList';
+import { Routes, Route, Outlet, Link, BrowserRouter } from "react-router-dom";
+import Detail from "./Components/Detail/Detail";
 
 function MainPage() {
   return (
-    <div className="App">
-      <Header />
-      <CountriesList />
-    </div>
+      <div className="App">
+          <BrowserRouter>
+              <Routes>
+                  <Route index element={<CountriesList />} />
+                  <Route path='detail/:id' element={<Detail />} />
+              </Routes>
+          </BrowserRouter>
+      </div>
+
   );
 }
 
