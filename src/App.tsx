@@ -10,7 +10,7 @@ function MainPage() {
           <BrowserRouter>
               <Routes>
                   <Route index element={<CountriesList />} />
-                  <Route path='detail/:id' element={<Detail />} />
+                  <Route path=':id' element={<Detail />} />
               </Routes>
           </BrowserRouter>
       </div>

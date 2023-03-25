@@ -1,9 +1,8 @@
-import React, {ChangeEvent, useEffect, useState} from 'react';
+import {ChangeEvent, useEffect, useState} from 'react';
 import './CountriesList.css';
 import CountryCard from '../CountryCard/CountryCard';
 import {ICountry} from '../../Interfaces/Interfaces';
 import Header from '../Header/Header';
-import {Link} from 'react-router-dom';
 
 const requestURL = 'https://restcountries.com/v3.1/';
 

@@ -14,7 +14,7 @@ function CountryCard(props: ICard) {
                 <img className="image" src={props.data.flags.svg} alt=""/>
             </div>
             <div className="card-info">
-                <Link to={'/detail/' + cardName}>
+                <Link to={cardName}>
                     <div className="card-title">{props.data.name.official}</div>
                 </Link>
 
