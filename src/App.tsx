@@ -1,7 +1,7 @@
 import React from 'react';
 import './MainPage.css';
 import CountriesList from './Components/CountriesList/CountriesList';
-import { Routes, Route, Outlet, Link, BrowserRouter } from "react-router-dom";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Detail from "./Components/Detail/Detail";
 
 function MainPage() {
