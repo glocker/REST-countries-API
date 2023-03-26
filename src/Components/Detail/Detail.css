@@ -1,0 +1,12 @@
+.detail-wrapper {
+    padding: 3vh 3vw 3vh 3vw;
+    box-shadow: rgba(0, 0, 0, 0.24) 0 -5px 8px -5px;
+}
+
+.detail-wrapper button {
+    margin: 10vh 0vw;
+}
+
+.detail-info {
+    display: flex;
+}

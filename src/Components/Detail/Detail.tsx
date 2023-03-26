@@ -1,5 +1,7 @@
 import {useState, useEffect} from 'react';
 import DetailCard from '../DetailCard/DetailCard';
+import Header from '../Header/Header';
+import './Detail.css';
 
 const requestURL = 'https://restcountries.com/v3.1/';
 
@@ -12,7 +14,7 @@ function Detail() {
 
     useEffect(() => {
 
-        const getCountry: any = async () => {
+        const getCountry = async () => {
             const data = await fetch(requestURL + 'name/' + countryName + '?fullText=true', {method: 'GET'});
 
             const [dataToJSON] = await data.json();
@@ -24,14 +26,24 @@ function Detail() {
 
     }, []);
 
-    console.log(country);
-
+    //console.log(country)
 
     return(
         <div>
-            <h1>Detail Component</h1>
-            <div>{countryName}</div>
-            <DetailCard data={country} />
+            <Header />
+            <div className="detail-wrapper">
+                <button>
+                    Back
+                </button>
+                <div className="detail-info">
+                    <div className="detail-flag">
+                        <img src={country.flags.svg} />
+                    </div>
+                    <div className="detail-info">
+                        <div>{countryName}</div>
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }
