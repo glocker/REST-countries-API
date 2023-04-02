@@ -10,3 +10,16 @@
 .detail-info {
     display: flex;
 }
+
+.detail-info img {
+    height: 30%;
+    width: 30%;
+}
+
+.detail-text-wrapper {
+    padding: 1vh 3vw;
+}
+
+.detail-columns {
+    display: flex;
+}

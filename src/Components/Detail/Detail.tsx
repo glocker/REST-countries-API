@@ -35,14 +35,43 @@ function Detail() {
                 <button>
                     Back
                 </button>
-                <div className="detail-info">
-                    <div className="detail-flag">
-                        <img src={country.flags.svg} />
-                    </div>
+                { country ?
                     <div className="detail-info">
-                        <div>{countryName}</div>
+                        <img src={country.flags.svg}/>
+                        <div className="detail-text-wrapper">
+                            <h1>{countryName}</h1>
+                            <div className="detail-columns">
+                                <div className="detail-first-column">
+                                    <strong>Native Name: </strong>
+                                    {country.name.nativeName.eng.official
+                                        ? country.name.nativeName.eng.official
+                                        : 'No official native name in english'
+                                    }
+                                    <br/>
+                                    <strong>Population: </strong>{country.population}
+                                    <br/>
+                                    <strong>Region: </strong>{country.region}
+                                    <br/>
+                                    <strong>Sub Region: </strong>{country.subregion}
+                                    <br/>
+                                    <strong>Capital: </strong>{country.capital[0]}
+                                </div>
+                                <div className="detail-second-column">
+                                    <strong>Top Level Domain: </strong>{country.tld[0]}
+                                    <br/>
+                                    <strong>Currencies: </strong>{country.currencies.NAD.name}
+                                    <br/>
+                                    <strong>Languages: </strong>{}
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
+
+                    : null
+                }
+                {/*
+                 <DetailCard data={country} />
+                 */}
             </div>
         </div>
     )
