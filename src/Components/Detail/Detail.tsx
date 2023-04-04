@@ -26,7 +26,26 @@ function Detail() {
 
     }, []);
 
-    //console.log(country)
+    function getCurrencies(currencies: object) {
+
+        const currenciesList: string[] = [];
+            for (const key in currencies) {
+
+                if (currencies.hasOwnProperty(key)) {
+                    // @ts-ignore
+                    currenciesList.push(currencies[key].name)
+                }
+            }
+            return currenciesList?.join(', ');
+    }
+
+    function getLanguages(languages: object) {
+
+        const languagesList: string[] = [];
+
+        Object.values(languages).forEach(lang => languagesList.push(lang))
+        return languagesList?.join(', ');
+    }
 
     return(
         <div>
@@ -59,9 +78,9 @@ function Detail() {
                                 <div className="detail-second-column">
                                     <strong>Top Level Domain: </strong>{country.tld[0]}
                                     <br/>
-                                    <strong>Currencies: </strong>{country.currencies.NAD.name}
+                                    <strong>Currencies: </strong>{getCurrencies(country.currencies)}
                                     <br/>
-                                    <strong>Languages: </strong>{}
+                                    <strong>Languages: </strong>{getLanguages(country.languages)}
                                 </div>
                             </div>
                         </div>
