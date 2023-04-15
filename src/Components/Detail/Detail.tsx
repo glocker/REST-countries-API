@@ -67,7 +67,7 @@ function Detail() {
                             <div className="detail-columns">
                                 <div className="detail-first-column">
                                     <strong>Native Name: </strong>
-                                    {country.name.nativeName.eng.official
+                                    {country.name.nativeName?.eng?.official
                                         ? country.name.nativeName.eng.official
                                         : 'No official native name in english'
                                     }
@@ -88,6 +88,18 @@ function Detail() {
                                     <strong>Languages: </strong>{getLanguages(country.languages)}
                                 </div>
                             </div>
+                            
+                                {
+                                    country.borders.length 
+                                    ? 
+                                    <div className="detail-borders">
+                                        <strong>Border Countries:</strong>
+                                        {
+                                            country.borders.map((neighborName: string) => neighborName)
+                                        }
+                                    </div>
+                                    : null
+                                }
                         </div>
                     </div>
 
