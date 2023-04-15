@@ -12,8 +12,8 @@
 }
 
 .detail-info img {
-    height: 30%;
-    width: 30%;
+    height: 40%;
+    width: 40%;
 }
 
 .detail-text-wrapper {
@@ -22,4 +22,15 @@
 
 .detail-columns {
     display: flex;
+}
+
+.detail-first-column, .detail-second-column {
+    width: 20vw;
+}
+
+.detail-backButton {
+    cursor: pointer;
+    padding: 5px 30px;
+    background-color: white;
+    border-radius: 5px;
 }

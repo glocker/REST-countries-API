@@ -47,12 +47,17 @@ function Detail() {
         return languagesList?.join(', ');
     }
 
+    function backButtonHandler() {
+        window.history.back();
+    }
+
     return(
         <div>
             <Header />
             <div className="detail-wrapper">
-                <button>
-                    Back
+                <button className="detail-backButton" 
+                        onClick={backButtonHandler}>
+                &#8592;&nbsp;Back
                 </button>
                 { country ?
                     <div className="detail-info">
@@ -67,7 +72,7 @@ function Detail() {
                                         : 'No official native name in english'
                                     }
                                     <br/>
-                                    <strong>Population: </strong>{country.population}
+                                    <strong>Population: </strong>{country.population.toLocaleString()}
                                     <br/>
                                     <strong>Region: </strong>{country.region}
                                     <br/>

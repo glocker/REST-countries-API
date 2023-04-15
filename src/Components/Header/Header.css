@@ -29,6 +29,7 @@ header {
     font-weight: 300;
     color: black;
     display: inline;
+    font-weight: 500;
 }
 
 .dark { /* Class for dark mode */

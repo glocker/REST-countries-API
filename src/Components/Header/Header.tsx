@@ -10,7 +10,7 @@ function Header() {
             <button type="button" className="dark-mode-btn">
                 <img src={moon} alt="Dark mode" className="dark-mode-icon" />
                 <div className="dark-mode-title">
-                    Dark Mode
+                    &nbsp;Dark Mode
                 </div>
             </button>
             </div>
