@@ -12,6 +12,11 @@
     margin: 10px;
 }
 
+.card-link {
+    text-decoration: none;
+    color: black;
+}
+
 .image {
     width: 100%;
 }

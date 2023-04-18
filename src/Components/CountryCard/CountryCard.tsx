@@ -10,13 +10,13 @@ function CountryCard(props: ICard) {
     return(
         <div className="card-wrapper"
              key={props.data.name.official}>
+            <Link to={cardName} className="card-link">
             <div className="card-image">
                 <img className="image" src={props.data.flags.svg} alt=""/>
             </div>
             <div className="card-info">
-                <Link to={cardName}>
+
                     <div className="card-title">{props.data.name.official}</div>
-                </Link>
 
                 <div className="card-text">
                     <div className="card-population">Population: {props.data.population.toLocaleString()}</div>
@@ -24,6 +24,7 @@ function CountryCard(props: ICard) {
                     <div className="card-capital">Capital: {props.data.capital}</div>
                 </div>
             </div>
+            </Link>
         </div>
     )
 }
