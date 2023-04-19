@@ -26,10 +26,9 @@ header {
 }
 
 .dark-mode-title {
-    font-weight: 300;
     color: black;
     display: inline;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .dark { /* Class for dark mode */

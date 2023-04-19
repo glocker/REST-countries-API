@@ -80,7 +80,7 @@ function CountriesList(): any {
                             />
                         </label>
                     </div>
-                    <div className="div">
+                    <div className="dropdownSelector">
                         <select onChange={(e: ChangeEvent<HTMLSelectElement>) => setRegion(e.target.value)}
                                 aria-label="Filter countries by region">
                             <option value="All">Filter By Region</option>
