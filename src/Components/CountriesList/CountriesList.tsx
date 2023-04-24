@@ -35,30 +35,29 @@ function CountriesList(): any {
         return items.filter((item: any) => {
 
             if (item.region === region) {
-
                 return searchParam.some((searchValue: string) => {
-
-                    if (query && item[searchValue]) {
-                        if (item[searchValue].toString().toLowerCase().indexOf(query.toLowerCase()) > -1) {
-                            return item[searchValue].toString().toLowerCase().indexOf(query.toLowerCase()) > -1;
-                        }
-                    }
-
-                    else if (region === 'All') {
-                        return searchParam.some((selectedRegion: string) => {
-                            if (selectedRegion && item[selectedRegion]) {
-                                return item[selectedRegion].toString().toLowerCase().indexOf(query.toLowerCase()) > -1;
-                            }
-                        })
-                    }
-                })
+                    return (
+                        item[searchValue]
+                            ? item[searchValue]
+                                .toString()
+                                .toLowerCase()
+                                .indexOf(query.toLowerCase()) > -1
+                            : null
+                    );
+                });
+            } else if (region === "All") {
+                return searchParam.some((selectedRegion: string) => {
+                    return (
+                        item[selectedRegion]
+                            ? item[selectedRegion]
+                                .toString()
+                                .toLowerCase()
+                                .indexOf(query.toLowerCase()) > -1
+                            : null
+                    );
+                });
             }
-
-            // If we don't search or filter then return whole countries list
-            else {
-                return countries;
-            }
-        })
+        });
     }
 
 
@@ -85,7 +84,7 @@ function CountriesList(): any {
                                 aria-label="Filter countries by region">
                             <option value="All">Filter By Region</option>
                             <option value="Africa">Africa</option>
-                            <option value="America">America</option>
+                            <option value="Americas">America</option>
                             <option value="Asia">Asia</option>
                             <option value="Europe">Europe</option>
                             <option value="Oceania">Oceania</option>
