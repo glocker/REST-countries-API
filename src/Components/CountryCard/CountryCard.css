@@ -4,12 +4,13 @@
 }
 
 .card-wrapper {
-    width: 15vw;
+    width: 20vw;
     height: 40vh;
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     border-radius: 5px;
-    margin: 10px;
+    margin: 5vh 0;
+    justify-self: center;
 }
 
 .card-link {
