@@ -29,8 +29,13 @@ select {
 
 .search-input {
     height: 3em;
-    padding-left: 15px;
+    width: 400px;
+    padding-left: 80px;
     border-radius: 5px;
     border-color: transparent;
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Vector_search_icon.svg/1200px-Vector_search_icon.svg.png);
+    background-size: 25px 25px;
+    background-repeat: no-repeat;
+    background-position: 8% 50%;
 }

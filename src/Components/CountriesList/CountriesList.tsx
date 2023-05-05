@@ -66,19 +66,17 @@ function CountriesList(): any {
             <Header />
             <main>
                 <div className="controlsWrapper">
-                    <div className="searchBar">
-                        <label htmlFor="search-form">
-                            <input
-                                type="search"
-                                name="search-form"
-                                id="search-form"
-                                className="search-input"
-                                placeholder="Search for a country..."
-                                value={query}
-                                onChange={(e) => setQuery(e.target.value)}
-                            />
-                        </label>
-                    </div>
+                    <label htmlFor="search-form">
+                        <input
+                            type="search"
+                            name="search-form"
+                            id="search-form"
+                            className="search-input"
+                            placeholder="Search for a country..."
+                            value={query}
+                            onChange={(e) => setQuery(e.target.value)}
+                        />
+                    </label>
                     <div className="dropdownSelector">
                         <select onChange={(e: ChangeEvent<HTMLSelectElement>) => setRegion(e.target.value)}
                                 aria-label="Filter countries by region">
