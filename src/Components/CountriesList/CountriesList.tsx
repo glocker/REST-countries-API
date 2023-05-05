@@ -14,7 +14,7 @@ function CountriesList(): any {
 
     const [searchParam]: any = useState<string|string[]>(['capital', 'name']);
 
-    const [region, setRegion]: any = useState(['All']);
+    const [region, setRegion]: any = useState('All');
 
     useEffect(() => {
 
