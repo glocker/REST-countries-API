@@ -1,3 +1,7 @@
+main {
+    color: inherit;
+    background: inherit;
+}
 
 .controlsWrapper {
     display: flex;
