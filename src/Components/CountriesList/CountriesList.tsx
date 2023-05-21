@@ -1,12 +1,17 @@
-import {ChangeEvent, useEffect, useState} from 'react';
+import {ChangeEvent, useEffect, useState, useContext} from 'react';
 import './CountriesList.css';
 import CountryCard from '../CountryCard/CountryCard';
 import {ICountry} from '../../Interfaces/Interfaces';
 import Header from '../Header/Header';
+import { ThemeContext } from '../ThemeContext/ThemeContext'
 
 const requestURL = 'https://restcountries.com/v3.1/';
 
 function CountriesList(): any {
+
+    const test = useContext(ThemeContext);
+
+    console.log('Context in CountriesList is : ' + test.theme);
 
     const [countries, setCountries]: any = useState<object[]>([]);
 
