@@ -43,3 +43,7 @@ select {
     background-repeat: no-repeat;
     background-position: 8% 50%;
 }
+
+.search-input-dark {
+    background-color: var(--dark-blue);
+}
