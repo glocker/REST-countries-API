@@ -1,6 +1,11 @@
 :root {
-  --black1: hsl(207, 26%, 17%);
-  --black2: hsl(209, 23%, 22%);
+  --very-dark-blue: hsl(207, 26%, 17%); /* Dark Mode Background */
+  --very-dark-blue2: hsl(200, 15%, 8%); /* Light Mode Text */
+  --dark-blue: hsl(209, 23%, 22%); /* Dark Mode Elements */
+
+  --white: hsl(0, 0%, 100%); /* Dark Mode Text & Light Mode Elements */
+  --light-gray: hsl(0, 0%, 98%); /* Light Mode Background */
+  --dark-gray: hsl(0, 0%, 52%); /* Light Mode Input */
 }
 
 body {
@@ -11,10 +16,10 @@ body {
 }
 
 .dark {
-  background-color: var(--black1);
+  background-color: var(--very-dark-blue);
   color: #e6e6e6;
 }
 
 .dark-mode-btn {
-  background-color: var(--black2);
+  background-color: var(--very-dark-blue);
 }
