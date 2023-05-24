@@ -4,6 +4,11 @@ header {
     justify-content: space-between;
 }
 
+.header-dark {
+    background-color: var(--dark-blue);
+    color: var(--white);
+}
+
 .dark-mode-container {
     display: flex;
 }

@@ -14,7 +14,7 @@ main {
     border-radius: .25em;
 }
 
-select {
+.select {
     width: 100%;
     height: 100%;
     cursor: pointer;
@@ -23,6 +23,11 @@ select {
     border-radius: 5px;
     border-color: transparent;
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+.select-dark {
+    background-color: var(--dark-blue);
+    color: var(--white);
 }
 
 .countries-list {
