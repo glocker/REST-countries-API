@@ -9,9 +9,9 @@ const requestURL = 'https://restcountries.com/v3.1/';
 
 function CountriesList(): any {
 
-    const test = useContext(ThemeContext);
+    const theme = useContext(ThemeContext)?.theme;
 
-    console.log('Context in CountriesList is : ' + test.theme);
+    console.log('Context in CountriesList is : ' + theme);
 
     const [countries, setCountries]: any = useState<object[]>([]);
 
@@ -76,14 +76,15 @@ function CountriesList(): any {
                             type="search"
                             name="search-form"
                             id="search-form"
-                            className="search-input"
+                            className={ 'search-input ' + (theme === 'dark' ? 'search-input-dark' : '') }
                             placeholder="Search for a country..."
                             value={query}
                             onChange={(e) => setQuery(e.target.value)}
                         />
                     </label>
                     <div className="dropdownSelector">
-                        <select onChange={(e: ChangeEvent<HTMLSelectElement>) => setRegion(e.target.value)}
+                        <select className={ 'select ' + (theme === 'dark' ? 'select-dark' : '') }
+                                onChange={(e: ChangeEvent<HTMLSelectElement>) => setRegion(e.target.value)}
                                 aria-label="Filter countries by region">
                             <option value="All">Filter By Region</option>
                             <option value="Africa">Africa</option>

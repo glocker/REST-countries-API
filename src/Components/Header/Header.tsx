@@ -8,7 +8,7 @@ function Header() {
     const {theme, toggleTheme} = useContext(ThemeContext);
 
     return (
-        <header>
+        <header className={ theme === 'dark' ? 'header-dark' : '' }>
             <h2>Where in the world?</h2>
             <div className="dark-mode-container">
             <button type="button" className="dark-mode-btn" onClick={toggleTheme}>
