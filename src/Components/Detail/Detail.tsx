@@ -1,11 +1,16 @@
-import {useState, useEffect} from 'react';
+import {useState, useEffect, useContext} from 'react';
 import DetailCard from '../DetailCard/DetailCard';
 import Header from '../Header/Header';
 import './Detail.css';
+import { ThemeContext } from '../ThemeContext/ThemeContext';
 
 const requestURL = 'https://restcountries.com/v3.1/';
 
 function Detail() {
+
+    const test = useContext(ThemeContext);
+
+    console.log('Context in Detail is : ' + test.theme);
 
     // Get country name for new request to grab more data for detail card
     const countryName: string = document.location.pathname.slice(1).replace(/_/g," ");
